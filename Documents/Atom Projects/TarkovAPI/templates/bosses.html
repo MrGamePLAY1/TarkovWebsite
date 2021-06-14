@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Bosses</title>
+</head>
+<body>
+    <section class="showcase">
+        <header>
+          <a href="index.html"><img src="logo.png"></a>
+          <div class="toggle"></div>
+        </header>
+
+        <div class="overlay"></div>
+        <div class="text">
+          <h4>this is the heading</h4>
+          <br>
+
+          <!-- Displaying the data -->
+          <div id= "myData"></div>
+
+          <table>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Spawn Chance</th>
+              <th>Followers</th>
+              <th>Location</th>
+            </tr>
+            <tr>
+              <td><img src="https://tarkov-api.s3.eu-west-1.amazonaws.com/images/bosses/Killa.png" width="100" height="100"></td>
+              <td id="Kname">1</td>
+              <td id="Kspawn">2</td>
+              <td id="Kfollowers">2</td>
+              <td id="Klocation"></td>
+            </tr>
+            <tr>
+              <td><img src="https://tarkov-api.s3.eu-west-1.amazonaws.com/images/bosses/Reshala.png" width="100" height="100"></td>
+              <td id="Rname">1</td>
+              <td id="Rspawn">2</td>
+              <td id="Rfollowers">3</td>
+              <td id="Rlocation"></td>
+            </tr>
+            <tr>
+              <td><img src="https://tarkov-api.s3.eu-west-1.amazonaws.com/images/bosses/Glukhar.png" width="100" height="100"></td>
+              <td id="Gname"></td>
+              <td id="Gspawn"></td>
+              <td id="Gfollowers"></td>
+              <td id="Glocation"></td>
+            </tr>
+            <tr>
+              <td><img src="https://tarkov-api.s3.eu-west-1.amazonaws.com/images/bosses/Shturman.png" width="100" height="100"></td>
+              <td id="Sname">1</td>
+              <td id="Sspawn">2</td>
+              <td id="Sfollowers">3</td>
+              <td id="Slocation"></td>
+            </tr>
+          </table>
+
+        </div>
+    
+        <ul class="social">
+          <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+        </ul>
+
+    </section>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+          <li><a href="bosses.html">Bosses</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+          <li><a href="#">Ammo</a></li>
+          <li><a href="#">Ammo Stats</a></li>
+          <li><a href="#">Locations</a></li>
+        </ul>
+      </div>
+        <!-- JavaScript (Menu) -->
+  <script>
+      const menuToggle = document.querySelector('.toggle');
+      const showcase = document.querySelector('.showcase');
+      
+      menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      showcase.classList.toggle('active');
+    })
+
+
+      // This is Bosses API Key to access boss information (JQuery)
+      // https://tarkov-api.ijos.es/api/bosses?rapidapi-key=2aff1c40c0msha0892173f7c583ep1ffadfjsn136ee117470a   Working Api Check
+      const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://escape-from-tarkov.p.rapidapi.com/bosses",
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "2aff1c40c0msha0892173f7c583ep1ffadfjsn136ee117470a",
+        "x-rapidapi-host": "escape-from-tarkov.p.rapidapi.com"
+      }
+    };
+
+    $.ajax(settings).done(function (response) {
+      return response.json
+    });
+
+    $.ajax(settings).done(function(data){
+      appendData(data);
+    });
+
+    function appendData(data)
+    {
+      var mainContainer = document.getElementById("myData");
+      for(var i = 0; i < data.length; i++)
+      {
+
+        //Killa
+        var Kname = data[0].name
+        var Kspawn_chance = data[0].spawn_chance_percentage
+        var Klocation = data[0].location.name
+        var Kfollowers = data[0].followers
+
+        //Reshala
+        var Rname = data[1].name
+        var Rspawn_chance = data[0].spawn_chance_percentage
+        var Rlocation = data[1].location.name
+        var Rfollowers = data[1].followers
+
+        //Glukhar
+        var Gname = data[2].name
+        var Gspawn_chance = data[2].spawn_chance_percentage
+        var Glocation = data[2].location.name
+        var Gfollowers = data[2].followers
+
+        //Shturman
+        var Sname = data[3].name
+        var Sspawn_chance = data[3].spawn_chance_percentage
+        var Slocation = data[3].location.name
+        var Sfollowers = data[3].followers
+
+        document.getElementById("Kname").innerHTML = Kname;
+        document.getElementById("Kspawn").innerHTML = Kspawn_chance;
+        document.getElementById("Kfollowers").innerHTML = Kfollowers;
+        document.getElementById("Klocation").innerHTML = Klocation;
+
+        document.getElementById("Rname").innerHTML = Rname;
+        document.getElementById("Rspawn").innerHTML = Rspawn_chance;
+        document.getElementById("Rfollowers").innerHTML = Rfollowers;
+        document.getElementById("Rlocation").innerHTML = Rlocation;
+
+        document.getElementById("Gname").innerHTML = Gname;
+        document.getElementById("Gspawn").innerHTML = Gspawn_chance;
+        document.getElementById("Gfollowers").innerHTML = Gfollowers;
+        document.getElementById("Glocation").innerHTML = Glocation;
+
+        document.getElementById("Sname").innerHTML = Sname;
+        document.getElementById("Sspawn").innerHTML = Sspawn_chance;
+        document.getElementById("Sfollowers").innerHTML = Sfollowers;
+        document.getElementById("Slocation").innerHTML = Slocation;
+
+      }
+    }
+
+  </script>
+</body>
+</html>

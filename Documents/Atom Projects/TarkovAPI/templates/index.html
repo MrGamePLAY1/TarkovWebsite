@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Home</title>
+</head>
+  <body>
+    <section class="showcase">
+      <header>
+        <a href="index.html"><img src="logo.png"></a>
+        <div class="toggle"></div>
+      </header>
+  
+      <video src="video.mp4" type="video/mp4" muted loop autoplay></video>
+  
+      <div class="overlay"></div>
+      <div class="text">
+        <h3>This is a heading</h3>
+        <br>
+        <p class="mainBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates nemo aliquid recusandae, facilis adipisci et hic, molestias ipsam esse ut ad quis, quisquam harum rem.</p>
+  
+        <a href="#"> Explore</a>
+      </div>
+  
+      <ul class="social">
+        <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+      </ul>
+  
+    </section>
+  
+    <div class="menu">
+      <ul>
+        <li><a href="bosses.html">Bosses</a></li>
+        <li><a href="dealers.html">Dealers</a></li>
+        <li><a href="sample.html">Ammo</a></li>
+        <li><a href="#">Ammo Stats</a></li>
+        <li><a href="#">Locations</a></li>
+      </ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      const menuToggle = document.querySelector('.toggle');
+      const showcase = document.querySelector('.showcase');
+
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        showcase.classList.toggle('active');
+      })
+    </script>
+
+  </body>
+</html>
