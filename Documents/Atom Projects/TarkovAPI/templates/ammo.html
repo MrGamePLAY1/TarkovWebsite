@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Ammo Charts</title>
+</head>
+<body>
+    <section class="showcase">
+        <header>
+            <!-- Logo -->
+            <a href="sample.html"><img src="logo.png"></a>
+            <div class="toggle"></div>
+        </header>
+
+        <div class="overlay"></div>
+        <div class="text">
+            <center><h4>Ammo Chart</h4></center>
+            <br>
+
+            <!-- Displaying the data -->
+            <div id="ammoChart"></div>
+
+            <!-- Table of Ammo -->
+            <table>
+                <thead>
+                    <tr>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending"> </th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Name</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Caliber</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Damage</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Pen Power</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Armor Damage</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Accuracy</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Recoil</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="sort ascending">Sold By</th>
+                    </tr>
+
+                    <!-- TT AKBS -->
+                    <tr>
+                        <td><img src="TTAKBS.png" width="70" height="70"></td>
+                        <td id="icon">TT AKBS</td>
+                        <td id="caliber">7.62 x 25mm</td>
+                        <td id="dmg">58</td>
+                        <td id="pen">12</td>
+                        <td id="armor">32%</td>
+                        <td id="accuracy">+15%</td>
+                        <td id="recoil">-15%</td>
+                        <td id="soldBy">Level 1 (Prapor)</td>
+                    </tr>
+
+                    <!-- TT-FMJ 43 -->
+                    <tr>
+                        <td><img src="TTFMJ43.png" width="70" height="70"></td>
+                        <td id="icon-2">TT FMJ43</td>
+                        <td id="caliber-2">7.62 x 25mm</td>
+                        <td id="dmg-2">60</td>
+                        <td id="pen-2">11</td>
+                        <td id="armor-2">29%</td>
+                        <td id="accuracy-2">+0%</td>
+                        <td id="recoil-2">+0%</td>
+                        <td id="soldBy-2">Level 1 (Prapor)</td>
+                    </tr>
+
+                    <!-- TT LRNPC -->
+                    <tr>
+                        <td><img src="TTLRNPC.png" width="70" height="70"></td>
+                        <td id="icon-3">TT LRNPC</td>
+                        <td id="caliber-3">7.62 x 25mm</td>
+                        <td id="dmg-3">64</td>
+                        <td id="pen-3">8</td>
+                        <td id="armor-3">28%</td>
+                        <td id="accuracy-3">+5%</td>
+                        <td id="recoil-3">-5%</td>
+                        <td id="soldBy-3">Level 1 (Jager)</td>
+                    </tr>
+
+                    <!-- TT PGL -->
+                    <tr>
+                        <td><img src="TTPGL.png" width="70" height="70"></td>
+                        <td id="icon-4">TT AKBS</td>
+                        <td id="caliber-4">7.62 x 25mm</td>
+                        <td id="dmg-4">66</td>
+                        <td id="pen-4">12</td>
+                        <td id="armor-4">32%</td>
+                        <td id="accuracy-4">+15%</td>
+                        <td id="recoil-4">-15%</td>
+                        <td id="soldBy-4">Level 1 (Prapor)</td>
+                    </tr>
+
+
+                    <!-- TTP STGZH -->
+                    <tr>
+                        <td><img src="TTPSTGZH.png" width="70" height="70"></td>
+                        <td id="icon-5">TT Pst gzh</td>
+                        <td id="caliber-5">7.62 x 25mm</td>
+                        <td id="dmg-5">50</td>
+                        <td id="pen-5">25</td>
+                        <td id="armor-5">36%</td>
+                        <td id="accuracy-5">+0%</td>
+                        <td id="recoil-5">+0%</td>
+                        <td id="soldBy-5">Level 3 (Prapor)</td>
+                    </tr>
+
+
+                    <!-- TTP TGZH -->
+                    <tr>
+                        <td><img src="TTPTGZH.png" width="70" height="70"></td>
+                        <td id="icon-6">TT PT gzh</td>
+                        <td id="caliber-6">7.62 x 25mm</td>
+                        <td id="dmg-6">55</td>
+                        <td id="pen-6">18</td>
+                        <td id="armor-6">34%</td>
+                        <td id="accuracy-6">-10%</td>
+                        <td id="recoil-6">+0%</td>
+                        <td id="soldBy-6">Level 2 (Prapor)</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+
+    <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bosses.html">Bosses</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+          <li><a href="sample.html">Ammo Stats</a></li>
+          <li><a href="#">Locations</a></li>
+        </ul>
+      </div>
+
+              <!-- JavaScript -->
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+  
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          showcase.classList.toggle('active');
+        })
+      </script>
+</body>
+</html>
